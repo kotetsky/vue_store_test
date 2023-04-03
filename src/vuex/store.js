@@ -1,6 +1,7 @@
 import {createStore} from 'vuex'
 import axios from 'axios'
 
+
 let store = createStore({
     state: {
         products: []
@@ -14,11 +15,13 @@ let store = createStore({
         GET_PRODUCTS_FROM_API({commit}) {
             return axios('http://localhost:3000/products', {
                 method: "GET"
-            }).then((products) => {
-                    commit('SET_PRODUCTS_TO_STATE'.products);
+            })
+                .then((products) => {
+                    commit('SET_PRODUCTS_TO_STATE', products.data);
                     return products;
                 })
                 .catch((error) => {
+                    console.log("there is an error");
                     console.log(error);
                     return error;
                 })
