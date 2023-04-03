@@ -14,6 +14,7 @@
 
 <script>
     import vCatalogItem from './v-catalog-item'
+    import {mapActions} from 'vuex'
 
     export default {
         name: "v-catalog",
@@ -22,59 +23,17 @@
             vCatalogItem
         },
         methods: {
+            ...mapActions([
+               'GET_PRODUCTS_FROM_API'
+            ]),
             showChildArticle(data) {
                 console.log(data)
             }
         },
-        data() {
-            return {
-                    products: [
-                    {
-                        image: "image_1.webp",
-                        name: "T-shirst-1",
-                        price: 110,
-                        article: "T1",
-                        available: true
-                    },
-                    {
-                        image: "image_2.webp",
-                        name: "T-shirst-2",
-                        price: 120,
-                        article: "T2",
-                        available: true
-                    },
-                    {
-                        image: "image_3.webp",
-                        name: "T-shirst-3",
-                        price: 130,
-                        article: "T3",
-                        available: true
-                    },
-                    {
-                        image: "image_4.webp",
-                        name: "T-shirst-4",
-                        price: 140,
-                        article: "T4",
-                        available: true
-                    },
-                    {
-                        image: "image_5.webp",
-                        name: "T-shirst-5",
-                        price: 150,
-                        article: "T5",
-                        available: false
-                    },
-                    {
-                        image: "image_6.webp",
-                        name: "T-shirst-6",
-                        price: 160,
-                        article: "T6",
-                        available: true
-                    }
-                ]
-            }
-        },
-        computed: {}
+        computed: {},
+        mounted() {
+            this.GET_PRODUCTS_FROM_API()
+        }
     }
 </script>
 

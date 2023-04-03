@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <div id="app">
+  <img alt="Vue logo" src="./assets/logo.png">
     <p>Hello, Vlad!</p>
     <p>Putin - Huilo!</p>
   </div>
