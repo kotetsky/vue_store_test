@@ -3,8 +3,10 @@ import axios from 'axios'
 
 
 let store = createStore({
-    state: {
-        products: []
+    state() {
+        return {
+            products: []
+        }
     },
     mutations: {
         SET_PRODUCTS_TO_STATE: (state, products) => {
