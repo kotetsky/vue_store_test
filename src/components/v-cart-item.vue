@@ -41,7 +41,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .v-cart-item {
         display: flex;
         flex-wrap: nowrap;
@@ -49,7 +49,7 @@
         align-items: center;
         box-shadow: 0 0 8px 0 #e0e0e0;
         padding: $padding*2;
-        margin: $margin;
+        margin: $margin*2;
 
         &__image {
             max-width: 100px;
